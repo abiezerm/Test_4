@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/i_css/root.css' />
+    <link rel='stylesheet' href='/i_css/nav.css' />
+    <link rel='stylesheet' href='/i_css/administrar.css' />
+</head>
+<body>
+<section class="n-grid">
+<section class="area_1">
+<!------------------------------------------------------------------------------
+nav
+------------------------------------------------------------------------------->
+    <nav>
+        <section>
+            <h1 class="titulo">Plantillas</h1>
+        </section>
+        <section>
+            <ul class="nav_1">
+                <li><a href="/">Buscar</a></li>
+                <li><a href="administrar.html">Administrar</a></li>
+                <li><a href="sitios_web.html">Sitios web</a></li>
+                <li><a href="#">..........</a></li>
+            </ul>
+            <section class="nav_2">
+                <ul>
+                    <li><a href="/">Buscar</a></li>
+                    <li><a href="administrar.html">Administrar</a></li>
+                    <li><a href="javascript:void(0);" id="nav_tablet">&#9776;</a></li>
+                </ul>
+                <section class="nav_tablet">
+                    <ul>
+                        <li><a href="sitios_web.html">Sitios web</a></li>
+                        <li><a href="#">..........</a></li>
+                    </ul>
+                </section>
+            </section>
+            <section class="nav_3">
+                <a href="javascript:void(0);" id="nav_celular">&#9776;</a>
+                <section class="minimo">
+                    <ul>
+                        <li><a href="/">Buscar</a></li>
+                        <li><a href="administrar.html">Administrar</a></li>
+                        <li><a href="sitios_web.html">Sitios web</a></li>
+                        <li><a href="#">..........</a></li>
+                    </ul>
+                </section>
+            </section>
+        </section>
+    </nav>
+</section>
+<section class="area_2">
+    <h2>Entrada de datos</h2>
+    <form method="POST" name="ia" id="ia">
+        <label for="id" hidden="">
+            <input type="text" name="id" id="id" value="0" required="">
+        </label>
+        <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Ingresar nombre" required="">
+        <label for="clasificacion">Clasificacion</label>
+            <input type="text" name="clasificacion" id="clasificacion" placeholder="Ingresar clasificación" required="">
+        <label for="tematica">Tematica</label>
+            <input type="text" name="tematica" id="tematica" placeholder="Ingresar tematica" required="">
+        <label for="nivel">Nivel</label>
+            <input type="number" min="1" max="3" name="nivel" id="nivel" placeholder="Ingresar nivel" required="">
+        <label for="enlace">Enlace</label>
+            <input type="text" name="enlace" id="enlace" placeholder="Ingresar enlace" required="">
+        <input type="submit" name="submit" id="submit" value="Insertar">
+    </form>
+</section>
+<section class="area_3">
+    <form method="POST" name="busqueda" id="busqueda">
+        <input type="search" name="buscar" id="buscar" placeholder="Nombre, tematica, clasificación, nivel...">
+    </form>
+    <!--h2>Salida de datos</h2-->
+    <p id="res"></p>
+    <div>
+    <table>
+        <!--<caption>Salida de datos</caption>-->
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Clasificaciones</th>
+                <th>Tematicas</th>
+                <th>Nivel</th>
+                <th>Enlace</th>
+                <th>Fecha</th>
+                <th colspan="2">Gestionar</th>
+            </tr>
+        </thead>
+        <tbody id="consulta">
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="9">
+                    <form method="POST" name="por" id="por">
+                        <label for="himOrHer">Por</label>
+                        <select id="himOrHer" name="himOrHer">
+                            <option value="">...</option>
+                            <option value="nombre">Nombre</option>
+                            <option value="nivel">Nivel</option>
+                            <option value="fecha">Fecha</option>
+                        </select>
+                    </form>
+                    <form method="POST" name="orden" id="orden">
+                        <label for="ordenar">Ordenar</label>
+                        <select id="ordenar" name="ordenar">
+                            <option value="">...</option>
+                            <option value="ASC">Acendente</option>
+                            <option value="DESC">Decendente</option>
+                        </select>
+                    </form>
+                </td>
+            </tr>
+             <tr>
+                <td colspan="9">
+                    <button id="anterior">Anterior</button>
+                    <form method="POST" name="paginacion" id="paginacion">
+                        <label for="pagina" hidden="">
+                            <input type="number" name="pagina" id="pagina" value="" min="0">
+                            <input type="number" name="paginas" id="paginas" min="0">
+                        </label>
+                    </form>
+                    <span id="paginaciones"></span>
+                    <button id="siguiente">Siguiente</button>
+                </td>
+            </tr>
+         </tfoot>
+    </table>
+    </div>
+</section>
+</section>
+<script src="l/i/nav.js"></script>
+<script src="l/l/administrar.js"></script>
+</body>
+</html>
+

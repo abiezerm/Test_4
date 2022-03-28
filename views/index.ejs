@@ -2,10 +2,83 @@
 <html>
 <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+        CSS 
+    -->
+    <link rel='stylesheet' href='/i_css/root.css' />
+    <link rel='stylesheet' href='/i_css/header.css' />
+    <link rel='stylesheet' href='/i_css/index.css' />
 </head>
 <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+<section class="n-grid">
+<section class="area_1">
+<!------------------------------------------------------------------------------
+nav
+------------------------------------------------------------------------------->
+    <nav>
+        <section>
+            <h1 class="titulo"><%= title %></h1>
+        </section>
+        <section>
+            <ul class="nav_1">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/panel_de_control">Panel</a></li>
+                <li><a href="sitios_web.html">Sitios web</a></li>
+                <li><a href="#">..........</a></li>
+            </ul>
+            <section class="nav_2">
+                <ul>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/panel_de_control">Panel</a></li>
+                    <li><a href="javascript:void(0);" id="nav_tablet">&#9776;</a></li>
+                </ul>
+                <section class="nav_tablet">
+                    <ul>
+                        <li><a href="sitios_web.html">Sitios web</a></li>
+                        <li><a href="#">..........</a></li>
+                    </ul>
+                </section>
+            </section>
+            <section class="nav_3">
+                <a href="javascript:void(0);" id="nav_celular">&#9776;</a>
+                <section class="minimo">
+                    <ul>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/panel_de_control">Panel</a></li>
+                        <li><a href="sitios_web.html">Sitios web</a></li>
+                        <li><a href="#">..........</a></li>
+                    </ul>
+                </section>
+            </section>
+        </section>
+    </nav>
+</section>
+<!------------------------------------------------------------------------------
+main
+------------------------------------------------------------------------------->
+<section class="area_2">
+    <main>
+        <p id="res"></p>
+        <form action="../php/Inicio.php" method="POST">
+            <label for="nombre">Nombre</label><br>
+                <input type="text" name="nombre" id="nombre" placeholder="Dejar este campo vacio." 
+                   pattern="([a-zA-Z]).{2,30}" title="Solo se acceptan 30 caracteres y tienen que ser letras."
+                   maxlength="30" required=""><br>
+            <label for="correo">Correo</label><br>
+                <input type="email" name="correo" placeholder="Ingresar correo..."
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                    title="El correo no es correcto." required=""><br>
+            <label for="codigo">Dirección</label><br>
+                <input type="text" name="direccion" placeholder="Ingresar dirección..." 
+                    maxlength="30" required=""><br>
+            <input type="submit" name="registro" value="Registrar">
+        </form>
+    </main>
+</section>
+</section>
+<script src="l/i/header.js"></script>
+<script src="l/l/index.js"></script>
 </body>
 </html>

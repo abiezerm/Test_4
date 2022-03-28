@@ -2,4 +2,78 @@
     Created on : 28 mar. 2022, 12:43:03 p. m.
     Author     : neury-dev
 */
+*, *:before, 
+*:after { 
+    box-sizing: border-box; 
+}
+html {
+    scroll-behavior: smooth;
+}
+body { 
+    color: #1c1d22 !important;
+    font-size: 100% !important;
+    font: 0.80em "Verdana", Helvetica, Tahoma, sans-serif !important;
+    line-height: 1em;
+    margin: 0 !important;
+}
+a { text-decoration: none; outline: none; }
+a, 
+button, 
+select { 
+    cursor: pointer;
+}
+label { font-weight: bold; }
+button,
+input,
+textArea, 
+select { 
+    border: none;
+    outline: none; 
+}
+input:disabled { cursor: not-allowed; }
+.titulo { transform: scaleY(1.7); letter-spacing: -0.08em; }
+.display { display: block; }
+ /*
+    https://www.w3schools.com/cssref/tryit.asp?filename=trycss_func_cubic-bezier
+    transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+ */
+:root {
+    --n-fuente:                 "Georgia", Garamond, serif;
+    --n-fuente-dos:             "Verdana", Helvetica, Tahoma, sans-serif;
+    --n-fuente-tres:            "Lucida Console", Courier, monospace;
+    
+    --n-color:                  white;/*hsl(0, 0%, 100%)*/
+    --n-color-uno-uno:          rgba(255, 255, 255, 0.5);
+    --n-color-dos:              #1c1d22;/*hsl(230, 10%, 12%)*/
+    --n-color-dos-uno:          rgba(28, 29, 34, 0.5);
+    --n-color-tres:             #373538;/*hsl(280, 3%, 21%)*/
+    --n-color-tres-uno:         rgba(55, 53, 56, 0.5);
+    --n-color-verde:            #457725;/*hsl(97, 53%, 31%)*/
+    --n-color-verde-uno:        rgba(69, 119, 37, 0.5);
+    --n-color-rojo:             #901E1D;/*hsl(1, 66%, 34%)*/
+    --n-color-rojo-uno:         rgb(144, 30, 29, 0.5);
+    
+    --n-transicion:             all 0.8s ease-in-out;/*Admin................................................*/
+    
+    --n-radio:                  0.50em;
+    --n-relleno:                0.50em;
+    
+    --n-sombra-de-texto:        -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    --n-sombra-de-texto-dos:    -1px 0 #1c1d22, 0 1px #1c1d22, 1px 0 #1c1d22, 0 -1px #1c1d22;
+    --n-sombra-de-texto-tres:   -1px 0 #373538, 0 1px #373538, 1px 0 #373538, 0 -1px #373538;
+    --n-sombra-de-texto-verde:  -1px 0 #457725, 0 1px #457725, 1px 0 #457725, 0 -1px #457725;
+    --n-sombra-de-texto-rojo:   -1px 0 #901E1D, 0 1px #901E1D, 1px 0 #901E1D, 0 -1px #901E1D;
+    
+    --n-sombra:                 0 0 20px white, 0 0 30px white;
+    --n-sombra-caja:            0 0 10px white, 0 0 40px white, 0 0 80px white;
+    --n-sombra-dos:             0 0 20px #1c1d22, 0 0 30px #1c1d22;
+    --n-sombra-caja-dos:        0 0 10px #1c1d22, 0 0 40px #1c1d22, 0 0 80px #1c1d22;
+    --n-sombra-tres:            0 0 20px #373538, 0 0 30px #373538;
+    --n-sombra-caja-tres:       0 0 10px #373538, 0 0 40px #373538, 0 0 80px #373538;
+    --n-sombra-verde:           0 0 20px #457725, 0 0 30px #457725;
+    --n-sombra-caja-verde:      0 0 10px #457725, 0 0 40px #457725, 0 0 80px #457725;
+    --n-sombra-rojo:            0 0 20px #901E1D, 0 0 30px #901E1D;
+    --n-sombra-caja-rojo:       0 0 10px #901E1D, 0 0 40px #901E1D, 0 0 80px #901E1D;
+}
+
 

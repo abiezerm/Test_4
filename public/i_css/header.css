@@ -1,0 +1,118 @@
+/* 
+    Created on : 28 mar. 2022, 12:48:37 p. m.
+    Author     : neury-dev
+*/
+/* nav
+--------------------------------------------------------------------------------*/
+.n-grid > .area_1 > nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    position: fixed;
+    width: 100%;
+    padding: 1.50em 3em 1.50em 3em;
+    transition: var(--n-transicion);
+    
+    border-bottom: 1px solid var(--n-color-dos);
+}
+.n-grid > .area_1 > nav,
+.n-grid > .area_1 > nav > section > section > section {
+    background-color: var(--n-color);
+    z-index: 1;
+}
+.n-grid > .area_1 > nav {
+    /*border-bottom: 1px solid var(--n-color-tres);*/
+}
+.n-grid > .area_1 > nav > section > *,
+.n-grid > .area_1 > nav > section > section > * { margin: 0; }
+.n-grid > .area_1 > nav > section > h1 {
+    font-family: var(--n-fuente-dos);
+    font-size: 1.50em;
+    transition: var(--n-transicion);
+}
+.n-grid > .area_1 > nav > :nth-child(2) {
+    display: flex;
+    align-items: flex-end;
+}
+.n-grid > .area_1 > nav > section > ul,
+.n-grid > .area_1 > nav > section > section > ul,
+.n-grid > .area_1 > nav > section > .nav_2 > .nav_tablet > ul,
+.n-grid > .area_1 > nav > section > .nav_3 > .minimo > ul {
+    list-style: none;
+    padding: 0;
+}
+.n-grid > .area_1 > nav > section > ul > :nth-child(1),
+.n-grid > .area_1 > nav > section > section > ul > :nth-child(1),
+.n-grid > .area_1 > nav > section > .nav_2 > .nav_tablet > ul > :nth-child(1) {
+    padding-left: 0.70em;
+}
+.n-grid > .area_1 > nav > section > ul > li, 
+.n-grid > .area_1 > nav > section > section > ul > li,
+.n-grid > .area_1 > nav > section > .nav_2 > .nav_tablet > ul > li {
+    display: inline;
+    font-weight: bold;
+}
+.n-grid > .area_1 > nav > section > .nav_3 > .minimo > ul > li {
+    font-weight: bold;
+    margin: 0.50em 0em;
+}
+.n-grid > .area_1 > nav > section > ul > li,
+.n-grid > .area_1 > nav > section > section > ul > li,
+.n-grid > .area_1 > nav > section > .nav_2 > .nav_tablet > ul > li,
+.n-grid > .area_1 > nav > section > .nav_3 > .minimo > ul > li {
+    position: relative;
+    padding-left: 24px;
+}
+.n-grid > .area_1 > nav > section > ul > li > a,
+.n-grid > .area_1 > nav > section > section > ul > li > a,
+.n-grid > .area_1 > nav > section > .nav_2 > .nav_tablet > ul > li > a,
+.n-grid > .area_1 > nav > section > .nav_3 > .minimo > ul > li > a {
+    position: relative;
+    color: var(--n-color-dos);
+}
+
+/* Maquetado
+--------------------------------------------------------------------------------*/
+/*@media screen and (min-width: 1200px) {
+    ............................
+}*/
+@media screen and (min-width: 600px) and (max-width: 1199px) {
+    /*.....................................................*/
+}
+@media screen and (min-width: 400px) and (max-width: 600px) {
+    .n-grid > .area_1 > nav > section > h1 {
+        font-size: 3.5vmin;
+    }
+    .n-grid > .area_1 > nav > section > .nav_2 > .nav_tablet {
+        display: none;
+        position: fixed;
+        top: 62px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        border-bottom: 1px solid var(--n-color-tres);
+        padding: 0em 3em;
+        transition: var(--n-transicion);
+    }
+}
+@media screen and (max-width: 400px) {
+    .n-grid > .area_1 > nav > section > .nav_3 > a {
+        color: var(--n-color-dos);
+    }
+    .minimo { 
+        display: none;
+        position: fixed;
+        top: 62px;
+        left: 0;
+        right: 0;
+        border: 1px solid var(--n-color);
+        padding: 0em 3em;
+        transition: var(--n-transicion);
+    }
+}
+@media screen and (min-width: 400px) { .nav_3 { display: none; } }
+@media screen and (max-width: 400px), (min-width: 600px) { .nav_2 { display: none; } }
+@media screen and (max-width: 600px) { .nav_1 { display: none; } }
+
+

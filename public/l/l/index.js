@@ -3,6 +3,7 @@ let objeto;
 let ia        = document.querySelector('#ia');
 let res       = document.querySelector('#res');
 
+let id          = document.querySelector('#id');
 let nombre      = document.querySelector('#nombre');
 let correo      = document.querySelector('#correo');
 let direccion   = document.querySelector('#direccion');

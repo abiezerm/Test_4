@@ -28,13 +28,11 @@ function
 desplazarse() {
     if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
         document.querySelector('nav').style.padding = "0.50em 3em 0.50em 3em";
-//        Corregir h1
         document.querySelector('h1').style.fontSize = "1.00em";
         document.querySelector('.nav_tablet').style.top = "31px";
         document.querySelector('.minimo').style.top = "31px";
     } else {
         document.querySelector('nav').style.padding = "1.50em 3em 1.50em 3em";
-//        Corregir h1
         document.querySelector('h1').style.fontSize = "1.50em";
         document.querySelector('.nav_tablet').style.top = "62px";
         document.querySelector('.minimo').style.top = "62px";

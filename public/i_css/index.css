@@ -8,18 +8,9 @@
     display: grid;
     grid-template-columns: 25% 25% 25% auto;
     grid-gap: 0.625em;
-    /*background-color: #2196F3;*/
-}
-.n-grid > section { 
-    /*color: var(--n-color-dos);*/
-    /*background-color: var(--n-color);*/ 
-    /*border: 1px solid var(--n-color-dos);*/
 }
 .n-grid > .area_1 { grid-area: 1 / span 4 / 2 / 5; }
 .n-grid > .area_2 { grid-area: 2 / span 4 / 3 / 5; }
-.n-grid > .area_3 { grid-area: 3 / span 4 / 4 / 5; }
-/*.n-grid > .area_4 { grid-area: 4 / span 4 / 5 / 5; }*/
-.n-grid > .area_5 { grid-area: 5 / span 4 / 6 / 5; }
 
 /* main
 --------------------------------------------------------------------------------*/
@@ -28,14 +19,6 @@
     justify-content: center;
     
     margin: 64px 0px 0px;
-    /*border: 1px solid var(--n-color-dos);*/
-}
-.n-grid > .area_2 > main {
-    /*padding: 8px;*/
-    /*border: 1px solid var(--n-color-dos);*/
-}
-.n-grid > .area_2 > main > h2 {
-    /*text-align: center;*/
 }
 .n-grid > .area_2 > main > form > input {
     width: 350px;
@@ -43,129 +26,9 @@
     border-radius: 8px;
     padding: 8px;
 }
-/* plantillas
---------------------------------------------------------------------------------*/
-.n-grid > .area_3 > section {
-    /*padding: 16px;*/
-}
-.n-grid > .area_3 > #organizar {
-    display: flex;
-    justify-content: center;
-}
-button {
-    color: var(--n-color-dos);
-    border-radius: 4px;
-    padding: 12px 16px;
-}
-button:hover,
-.boton.activo {
-    color: var(--n-color);
-    background-color: var(--n-color-dos);
-}
-.n-grid > .area_3 > .plantillas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-.n-grid > .area_3 > .plantillas > .plantilla {
-    width: 600px;
-    margin: 8px;
-}
-.n-grid > .area_3 > .plantillas > .plantilla:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-.n-grid > .area_3 > .plantillas > .plantilla > ul {
-    list-style: none;
-    margin-bottom: -16px;
-    padding: 0;
-}
-.n-grid > .area_3 > .plantillas > .plantilla > ul > :nth-child(4) {
-    text-align: right;
-}
-.n-grid > .area_3 > .plantillas > .plantilla > ul > li > span {
-    font-weight: bold;
-}
-.n-grid > .area_3 > .plantillas > .plantilla a {
-    float: right;
-    color: var(--n-color-dos);
-}
-.n-grid > .area_3 > .plantillas > .plantilla > iframe {
-    width: 100%; 
-    height: 250px;
-    border-radius: 10px;
-}
-/* paginacion
---------------------------------------------------------------------------------*/
-.paginacion {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-.paginacion > button {
-    background-color: var(--n-color);
-    font-weight: bold;
-    width: 100%;
-    border: none;
-    border: 0.10em solid var(--n-color);
-    border-radius: var(--n-radio);
-    padding: var(--n-relleno);
-}
-.paginacion > button:hover {
-    color: var(--n-color-dos);
-    background-color: var(--n-color-tres);
-    text-shadow: var(--n-sombra-de-texto);
-}
-.paginacion > form {
-    display: inline-block;
-    vertical-align: middle;
-    padding: 0.50em 0em 0.50em 0em;
-}
-.paginacion > button {
-    display: inline-block;
-    background-color: var(--n-color);
-    font-weight: bold;
-    margin: 0.30em 0em 0.30em 0em;
-    border: none;
-    border: 0.10em solid var(--n-color-dos);
-    border-radius: var(--n-radio);
-    padding: var(--n-relleno);
-}
-.paginacion > button:hover {
-    color: var(--n-color);
-    background-color: var(--n-color-tres);
-    border: 0.10em solid var(--n-color);
-}
-
-/* Resolución no acta
---------------------------------------------------------------------------------*/
-.no-acta { display: none; }
-
-@media screen and (max-width: 319px) { 
-    .n-grid { display: none; } 
-    .no-acta {
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        
-        color: var(--n-color-dos);
-        font-size: 6vw;
-        text-align: center;
-    }
-    .no-acta > i {
-        font-size: 12vw;
-    }
-}
-
-
 
 /* formulario
 --------------------------------------------------------------------------------*/
-/*p { color: white; }*/
 form {
     position: absolute;
     top: 20%;

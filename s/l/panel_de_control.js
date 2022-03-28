@@ -39,9 +39,7 @@ class Administrar {
                 } else {
                     Administrar.insertar(valores, res);
                 }
-            });
-            
-            
+            });   
         } else if(submit === 'Actualizar') {
             let valores = {
                 nombre: nombre, 
@@ -54,7 +52,7 @@ class Administrar {
     }
     static
     leer(res) {
-        conectar.query('SELECT * FROM direcciones ORDER BY id DESC LIMIT 5', function (error, resultado) {
+        conectar.query('SELECT * FROM direcciones ORDER BY id DESC LIMIT 2', function (error, resultado) {
             if(error) { throw error; } 
             else {
                 res.setHeader('Content-type', 'text/json');
@@ -80,12 +78,11 @@ class Administrar {
             case "ASC":     order = 'ORDER BY id ASC';      break;
             case "DESC":    order = 'ORDER BY id DESC';     break;
             case "nombre":  order = 'ORDER BY nombre DESC'; break;
-            case "nivel":   order = 'ORDER BY nivel DESC';  break;
-            case "fecha":   order = 'ORDER BY fecha DESC';  break;
+            case "correo":  order = 'ORDER BY correo DESC'; break;
             default:        order = 'ORDER BY id DESC';     break;
         }
     
-        conectar.query(`SELECT * FROM direcciones ${order} LIMIT 5`, function (error, resultado) {
+        conectar.query(`SELECT * FROM direcciones ${order} LIMIT 2`, function (error, resultado) {
             if(error) { throw error; } 
             else {
                 res.setHeader('Content-type', 'text/json');
@@ -102,10 +99,10 @@ class Administrar {
     }
     static
     buscar(req, res) {
-        conectar.query(`SELECT * FROM direcciones WHERE 
-            nombre LIKE '%${req.body.buscar}%'          OR 
-            correo LIKE '%${req.body.buscar}%' OR 
-            direccion LIKE '%${req.body.buscar}%'       ORDER BY id DESC LIMIT 10`, function (error, resultado) {
+        conectar.query(`SELECT * FROM direcciones   WHERE 
+            nombre LIKE '%${req.body.buscar}%'      OR 
+            correo LIKE '%${req.body.buscar}%'      OR 
+            direccion LIKE '%${req.body.buscar}%'   ORDER BY id DESC LIMIT 10`, function (error, resultado) {
             
             if(error) { throw error; } 
             else {
@@ -128,7 +125,7 @@ class Administrar {
     paginacion(req, res) { 
         let n = Number(req.body.pagina);
         
-        conectar.query('SELECT * FROM direcciones ORDER BY id DESC LIMIT 5 OFFSET ?', [n], function (error, resultado) {
+        conectar.query('SELECT * FROM direcciones ORDER BY id DESC LIMIT 2 OFFSET ?', [n], function (error, resultado) {
             if (error) { throw error; } 
             else {
                 res.setHeader('Content-type', 'text/json');

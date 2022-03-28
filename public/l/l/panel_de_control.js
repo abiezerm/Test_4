@@ -23,7 +23,7 @@ let paginas         = document.querySelector('#paginas');
 let anterior        = document.querySelector('#anterior');
 let siguiente       = document.querySelector('#siguiente');
 
-const LIMITE = 5;
+const LIMITE = 2;
 
 class Administrar {
     static 
@@ -44,8 +44,8 @@ class Administrar {
             if(response.ok) { return response.json(); } 
             else { throw 'Error de URL o respuesta.'; }
         }).then(function(json) { 
-            objeto = json;
-            submit.value = 'Insertar';
+            objeto          = json;
+            submit.value    = 'Insertar';
             
             if(objeto.res === 0) {
                 res.innerHTML = 'A llegado al limite de direcciones.';
@@ -84,8 +84,6 @@ class Administrar {
         let salida = '';
 
         for(let i in objeto) {
-            let fecha = new Date(objeto[i].fecha);
-
             salida += `
                 <tr>
                     <td>${objeto[i].id}</td>
@@ -161,7 +159,7 @@ class Administrar {
         }).then(function (response) {
             if(response.ok) { return response.json(); } 
             else { throw 'Error de URL o respuesta.'; }
-        }).then(function (json) { console.log(json);
+        }).then(function (json) {
             objeto = json;
             
             Administrar.colocar();

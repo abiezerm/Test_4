@@ -3,6 +3,7 @@
 <head>
     <title><%= title %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/i_img/logo.jpg" type="image/jpg" sizes="16x16">
     <!-- 
         CSS 
     -->
@@ -13,46 +14,7 @@
 <body>
 <section class="n-grid">
 <section class="area_1">
-<!------------------------------------------------------------------------------
-nav
-------------------------------------------------------------------------------->
-    <nav>
-        <section>
-            <h1 class="titulo">Empresa X</h1>
-        </section>
-        <section>
-            <ul class="nav_1">
-                <li><a href="/">Inicio</a></li>
-                <li><a href="/panel_de_control">Panel</a></li>
-                <li><a href="sitios_web.html">Sitios web</a></li>
-                <li><a href="#">..........</a></li>
-            </ul>
-            <section class="nav_2">
-                <ul>
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="/panel_de_control">Panel</a></li>
-                    <li><a href="javascript:void(0);" id="nav_tablet">&#9776;</a></li>
-                </ul>
-                <section class="nav_tablet">
-                    <ul>
-                        <li><a href="sitios_web.html">Sitios web</a></li>
-                        <li><a href="#">..........</a></li>
-                    </ul>
-                </section>
-            </section>
-            <section class="nav_3">
-                <a href="javascript:void(0);" id="nav_celular">&#9776;</a>
-                <section class="minimo">
-                    <ul>
-                        <li><a href="/">Inicio</a></li>
-                        <li><a href="/panel_de_control">Panel</a></li>
-                        <li><a href="sitios_web.html">Sitios web</a></li>
-                        <li><a href="#">..........</a></li>
-                    </ul>
-                </section>
-            </section>
-        </section>
-    </nav>
+    <%- include('seccion/header'); %>
 </section>
 <section class="area_2">
     <h2>Entrada de datos</h2>
@@ -63,7 +25,7 @@ nav
         <label for="nombre">Nombre</label>
             <input type="text" name="nombre" id="nombre" placeholder="Ingresar nombre.." required="">
         <label for="correo">Correo</label>
-            <input type="text" name="correo" id="correo" placeholder="Ingresar correo..." required="">
+            <input type="email" name="correo" id="correo" placeholder="Ingresar correo..." required="">
         <label for="direccion">Dirección</label>
             <input type="text" name="direccion" id="direccion" placeholder="Ingresar dirección..." required="">
         <input type="submit" name="submit" id="submit" value="Insertar">
@@ -71,9 +33,8 @@ nav
 </section>
 <section class="area_3">
     <form method="POST" name="busqueda" id="busqueda">
-        <input type="search" name="buscar" id="buscar" placeholder="Nombre, tematica, clasificación, nivel...">
+        <input type="search" name="buscar" id="buscar" placeholder="Nombre, correo y dirección...">
     </form>
-    <!--h2>Salida de datos</h2-->
     <p id="res"></p>
     <div>
     <table>
@@ -98,8 +59,8 @@ nav
                         <select id="himOrHer" name="himOrHer">
                             <option value="">...</option>
                             <option value="nombre">Nombre</option>
-                            <option value="nivel">Nivel</option>
-                            <option value="fecha">Fecha</option>
+                            <option value="correo">Correo</option>
+                            <option value="direccion">Dirección</option>
                         </select>
                     </form>
                     <form method="POST" name="orden" id="orden">

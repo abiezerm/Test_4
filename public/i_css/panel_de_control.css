@@ -88,10 +88,12 @@ table {
     border-collapse: collapse;
 }
 /*caption { text-align: center; font-weight: bold; }*/
-table > thead > tr > :nth-child(1),
-table > thead > tr > :nth-child(5),
-table > thead > tr > :nth-child(6) {
-    width: 50px;
+table > thead > tr > :nth-child(1)
+/*,*/
+/*table > thead > tr > :nth-child(5),*/
+/*table > thead > tr > :nth-child(6)*/ 
+{
+    width: 100px;
 }
 table > thead > tr > th {
     color: var(--n-color);

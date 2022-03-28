@@ -61,15 +61,11 @@ nav
             <input type="text" name="id" id="id" value="0" required="">
         </label>
         <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" id="nombre" placeholder="Ingresar nombre" required="">
-        <label for="clasificacion">Clasificacion</label>
-            <input type="text" name="clasificacion" id="clasificacion" placeholder="Ingresar clasificación" required="">
-        <label for="tematica">Tematica</label>
-            <input type="text" name="tematica" id="tematica" placeholder="Ingresar tematica" required="">
-        <label for="nivel">Nivel</label>
-            <input type="number" min="1" max="3" name="nivel" id="nivel" placeholder="Ingresar nivel" required="">
-        <label for="enlace">Enlace</label>
-            <input type="text" name="enlace" id="enlace" placeholder="Ingresar enlace" required="">
+            <input type="text" name="nombre" id="nombre" placeholder="Ingresar nombre.." required="">
+        <label for="correo">Correo</label>
+            <input type="text" name="correo" id="correo" placeholder="Ingresar correo..." required="">
+        <label for="direccion">Dirección</label>
+            <input type="text" name="direccion" id="direccion" placeholder="Ingresar dirección..." required="">
         <input type="submit" name="submit" id="submit" value="Insertar">
     </form>
 </section>
@@ -86,11 +82,8 @@ nav
             <tr>
                 <th>ID</th>
                 <th>Nombre</th>
-                <th>Clasificaciones</th>
-                <th>Tematicas</th>
-                <th>Nivel</th>
-                <th>Enlace</th>
-                <th>Fecha</th>
+                <th>Correo</th>
+                <th>Dirección</th>
                 <th colspan="2">Gestionar</th>
             </tr>
         </thead>
@@ -99,7 +92,7 @@ nav
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="9">
+                <td colspan="6">
                     <form method="POST" name="por" id="por">
                         <label for="himOrHer">Por</label>
                         <select id="himOrHer" name="himOrHer">
@@ -120,7 +113,7 @@ nav
                 </td>
             </tr>
              <tr>
-                <td colspan="9">
+                <td colspan="6">
                     <button id="anterior">Anterior</button>
                     <form method="POST" name="paginacion" id="paginacion">
                         <label for="pagina" hidden="">

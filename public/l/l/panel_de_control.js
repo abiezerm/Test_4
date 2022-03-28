@@ -4,13 +4,11 @@ let ia        = document.querySelector('#ia');
 let consulta  = document.querySelector('#consulta');
 let res       = document.querySelector('#res');
 
-let id              = document.querySelector('#id');
-let nombre          = document.querySelector('#nombre');
-let clasificacion   = document.querySelector('#clasificacion');
-let tematica        = document.querySelector('#tematica');
-let nivel           = document.querySelector('#nivel');
-let enlace          = document.querySelector('#enlace');
-let submit          = document.querySelector('#submit');
+let id          = document.querySelector('#id');
+let nombre      = document.querySelector('#nombre');
+let correo      = document.querySelector('#correo');
+let direccion   = document.querySelector('#direccion');
+let submit      = document.querySelector('#submit');
 
 let busqueda        = document.querySelector("#busqueda");
 let encontrar       = document.querySelector('#buscar');
@@ -31,34 +29,41 @@ class Administrar {
     static 
     insertar() {
         let datos = JSON.stringify({
-            id: id.value, nombre: nombre.value, clasificacion: clasificacion.value,
-            tematica: tematica.value, nivel: nivel.value, enlace: enlace.value, submit: submit.value
+            id: id.value, 
+            nombre: nombre.value, 
+            correo: correo.value,
+            direccion: direccion.value, 
+            submit: submit.value
         });
 
-        fetch('/administrar', {
+        fetch('/panel_de_control', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: datos
         }).then(function(response) {
             if(response.ok) { return response.json(); } 
             else { throw 'Error de URL o respuesta.'; }
-        }).then(function(json) {
+        }).then(function(json) { 
             objeto = json;
-
             submit.value = 'Insertar';
-            res.innerHTML = 'Insertado con exito.';
+            
+            if(objeto.res === 0) {
+                res.innerHTML = 'A llegado al limite de direcciones.';
+            } else {
+                res.innerHTML = 'Insertado con exito.';
+                Administrar.colocar();
+            }
+            
             setTimeout(function() { res.innerHTML = ''; }, 4000);
-            
+
             ia.reset();
-            
-            Administrar.colocar();
         }).catch(function(error) {
             console.log('Error de captura: ' + error.message);
         });
     }
     static 
     obtener(post) {
-        fetch('/administrar/' + post , {
+        fetch('/panel_de_control/' + post , {
             method: 'GET'
         }).then(function(response) {
             if(response.ok) { return response.json(); } 
@@ -85,11 +90,8 @@ class Administrar {
                 <tr>
                     <td>${objeto[i].id}</td>
                     <td title="${objeto[i].nombre}">${objeto[i].nombre}</td>
-                    <td title="${objeto[i].clasificaciones}">${objeto[i].clasificaciones}</td>
-                    <td title="${objeto[i].tematicas}">${objeto[i].tematicas}</td>
-                    <td>${objeto[i].nivel}</td>
-                    <td title="${objeto[i].enlace}"><a href="${objeto[i].enlace}" target="_blank">Abrir</a></td>
-                    <td>${new Intl.DateTimeFormat('es').format(fecha)}</td>
+                    <td title="${objeto[i].correo}">${objeto[i].correo}</td>
+                    <td title="${objeto[i].direccion}">${objeto[i].direccion}</td>
                     <td>
                         <button type='submit' onclick="Administrar.editar(${objeto[i].id})">Editar</button>
                     </td> 
@@ -105,7 +107,7 @@ class Administrar {
         } else {
             consulta.innerHTML = `
                 <tr>
-                    <td colspan='9' style='text-align: center; padding: 16px 0px;'>
+                    <td colspan='6' style='text-align: center; padding: 16px 0px;'>
                         No hay resultados...
                     </td>
                 </tr>
@@ -114,7 +116,7 @@ class Administrar {
     }
     static
     editar(editar) {
-        fetch('/administrar/editar/' + editar, {
+        fetch('/panel_de_control/editar/' + editar, {
             method: "GET"
         }).then(function (response) {
             if(response.ok) { return response.json(); } 
@@ -123,20 +125,18 @@ class Administrar {
             res.innerHTML = 'Listo para actualizar.';
             setTimeout(function() { res.innerHTML = ''; }, 4000);
             
-            id.value            = json[0].id;
-            nombre.value        = json[0].nombre;
-            clasificacion.value = json[0].clasificaciones;
-            tematica.value      = json[0].tematicas;
-            nivel.value         = json[0].nivel;
-            enlace.value        = json[0].enlace;
-            submit.value        = 'Actualizar';
+            id.value        = json[0].id;
+            nombre.value    = json[0].nombre;
+            correo.value    = json[0].correo;
+            direccion.value = json[0].direccion;
+            submit.value    = 'Actualizar';
         }).catch(function (error) {
             console.log('Error de captura: ' + error.message);
         });
     }
     static
     eliminar(eliminar) { 
-        fetch('/administrar/' + eliminar, {
+        fetch('/panel_de_control/' + eliminar, {
             method: "DELETE",
             headers: { 'Content-Type': 'application/json' }
         }).then(function(response) {
@@ -154,7 +154,7 @@ class Administrar {
     }
     static
     buscar(buscar) {
-        fetch('/administrar/buscar', {
+        fetch('/panel_de_control/buscar', {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ buscar: buscar })
@@ -171,7 +171,7 @@ class Administrar {
     }
     static
     limite() {
-        fetch('/administrar/limite/id', {
+        fetch('/panel_de_control/limite/id', {
             method: 'GET'
         }).then(function (response) {
             if (response.ok) { return response.json(); } 
@@ -186,7 +186,7 @@ class Administrar {
     paginacion() {
         let datos = JSON.stringify({ pagina: pagina.value });
         
-        fetch('/administrar/pagina', {
+        fetch('/panel_de_control/pagina', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: datos
